@@ -1,0 +1,28 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    betfair (1.0.6)
+      savon (<= 0.8.6)
+    builder (3.2.4)
+    crack (0.1.8)
+    gyoku (1.4.0)
+      builder (>= 2.1.2)
+      rexml (~> 3.0)
+    httpi (3.0.1)
+      rack
+    rack (3.0.4.1)
+    rexml (3.2.5)
+    savon (0.8.6)
+      builder (>= 2.1.2)
+      crack (~> 0.1.8)
+      gyoku (>= 0.3.0)
+      httpi (>= 0.7.8)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  betfair (~> 1.0, >= 1.0.6)
+
+BUNDLED WITH
+   2.3.15
