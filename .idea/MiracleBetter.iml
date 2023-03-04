@@ -11,9 +11,321 @@
     </content>
     <orderEntry type="jdk" jdkName="ruby-3.0.4-p208" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, ruby-3.0.4-p208) [gem]" level="application" />
+    <orderEntry type="module-library">
+      <library name="activesupport (vbundled(7.0.4.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/activesupport-7.0.4.2/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/activesupport-7.0.4.2/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="betfair (vbundled(1.0.6)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/examples" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/examples" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/betfair-1.0.6/examples" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="builder (vbundled(3.2.4)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/test" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/rakelib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/test" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/rakelib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/test" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/builder-3.2.4/rakelib" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="concurrent-ruby (vbundled(1.2.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/concurrent-ruby-1.2.2/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/concurrent-ruby-1.2.2/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/concurrent-ruby-1.2.2/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/concurrent-ruby-1.2.2/lib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/concurrent-ruby-1.2.2/ext" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="crack (vbundled(0.1.8)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/crack-0.1.8/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/crack-0.1.8/test" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/crack-0.1.8/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/crack-0.1.8/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/crack-0.1.8/test" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gyoku (vbundled(1.4.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/.github" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/gyoku-1.4.0/.github" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="httpi (vbundled(3.0.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/.github" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/.github" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/spec" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/httpi-3.0.1/.github" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="i18n (vbundled(1.12.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/i18n-1.12.0/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/i18n-1.12.0/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="minitest (vbundled(5.17.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/minitest-5.17.0/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/minitest-5.17.0/test" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/minitest-5.17.0/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/minitest-5.17.0/test" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/minitest-5.17.0/test" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="nokogiri (vbundled(1.14.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/bin" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/gumbo-parser" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/bin" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/gumbo-parser" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/bin" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/nokogiri-1.14.2-x86_64-linux/gumbo-parser" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="racc (vbundled(1.6.2)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/bin" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/bin" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/ext" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/lib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/bin" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/racc-1.6.2/ext" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rack (vbundled(3.0.4.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rack-3.0.4.1/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rack-3.0.4.1/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rexml (vbundled(3.2.5)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rexml-3.2.5/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rexml-3.2.5/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rexml-3.2.5/doc" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rexml-3.2.5/lib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/rexml-3.2.5/doc" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="savon (vbundled(0.8.6)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/savon-0.8.6/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/savon-0.8.6/spec" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/savon-0.8.6/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/savon-0.8.6/spec" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/savon-0.8.6/spec" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tzinfo (vbundled(2.0.6)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/tzinfo-2.0.6/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/gems/tzinfo-2.0.6/lib" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="williamhill (vbundled(0.0.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/.git" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/spec" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/lib" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/.git" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/spec" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/.git" />
+          <root url="file://$USER_HOME$/.gem/ruby/3.0.0/bundler/gems/williamhill-3457cc51c26b/spec" />
+        </excluded>
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.3.15, ruby-3.0.4-p208) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rbs (v1.4.0, ruby-3.0.4-p208) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, ruby-3.0.4-p208) [gem]" level="application" />
   </component>
 </module>

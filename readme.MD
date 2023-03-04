@@ -1,2 +1,4 @@
-# https://github.com/mikecmpbll/betfair
-gem 'betfair', '~> 1.0', '>= 1.0.6'
+get an api key starting free at
+https://rapidapi.com/api-sports/api/api-football
+
+then store the api key in API_FOOTBALL_RAPID_API.
