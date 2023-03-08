@@ -9,7 +9,7 @@ class FootballOdds
   attr_reader :all_odds
   attr_reader :current_page_data
   def initialize
-    @page = 1
+    first_page
     @url = URI("https://api-football-v1.p.rapidapi.com/v3/odds?date=#{todays_date}&page=#{@page.to_s}")
     get_page
     # it starts with the first page
@@ -23,11 +23,11 @@ class FootballOdds
   end
 
   def to_json
-    JSON::parse(to_s)
+    JSON::generate(to_h)
   end
 
   def to_h
-    to_json.to_h
+    JSON::parse(to_s)
   end
 
   def get_page
@@ -45,30 +45,42 @@ class FootballOdds
   def get_all_odds
     # set results page to first
     first_page
-    @all_odds["odds"] += to_h["response"]
-    while @page <= total_pages
+    @all_odds["odds"] << to_h["response"]
+    tp = total_pages
+    loop = tp - 1
+    minutes, remainder_secs, tp = get_remaining_time
+    puts "Downloading Page #{@page} of #{tp} - roughly #{minutes} minutes and #{remainder_secs} seconds remain"
+    loop.times do |progress|
       next_page
       get_page
-      @all_odds["odds"] += to_h["response"]
-      sleep 2
+      minutes, remainder_secs, tp = get_remaining_time
+      puts "Downloading Page #{@page} of #{tp} - roughly #{minutes} minutes and #{remainder_secs} seconds remain"
+      sleep 1
+      puts "Downloading Page #{@page} of #{tp} - roughly #{minutes} minutes and #{remainder_secs - 1} seconds remain"
+      @all_odds["odds"] << to_h["response"]
+      sleep 1
     end
   end
 
   def save_all_odds
     open(@todays_odds_filename,'w') do |f|
-      f.write JSON.parse(@all_odds)
+      f.write JSON.generate(@all_odds)
     end
   end
 
   def load_odds_from_file_if_current
     # checks if the file "todays_odds.json" is has been made today...
-    todays_odds_file = File.open(@todays_odds_filename,'r')
-    unless todays_odds_file.ctime.to_date == todays_date
-      @all_odds = JSON.parse(todays_odds_file.read.to_s).to_h
-      @all_odds_loaded = true
+    if File.exist?(@todays_odds_filename)
+      todays_odds_file = File.open(@todays_odds_filename,'r')
+      unless todays_odds_file.ctime.to_date == todays_date
+        @all_odds = JSON.parse(todays_odds_file.read.to_s).to_h
+        @all_odds_loaded = true
+      else
+        # ... complains if it has not.
+        raise "The '#{@todays_odds_filename}' file was not created today."
+      end
     else
-      # ... complains if it has not.
-      raise("The '#{@todays_odds_filename}' file was not created today.")
+      raise "File Not Found!"
     end
   end
 
@@ -76,6 +88,18 @@ class FootballOdds
     @all_odds_loaded = false
   end
   private
+
+  def get_remaining_time
+    tp = total_pages
+    secs = (tp - @page) * 2
+    remainder_secs = secs.divmod(60)[1]
+    minutes = secs.divmod(60)[0]
+    return minutes, remainder_secs, tp
+  end
+
+  def first_page
+    @page = 1
+  end
 
   ##
   # please call one of the casting methods (to_s/to_json/to_h) in order to get the current page
