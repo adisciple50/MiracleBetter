@@ -2,15 +2,15 @@ require_relative 'lineup'
 class Game
   attr_reader :winning_each_way_bets
   attr_reader :game_name
-  def initialize(game_hash)
+  def initialize(game_hash,fixture)
+    @fixture = fixture[0]
     @game = game_hash
     @bet_ids = get_unique_bet_ids
     @winning_each_way_bets = get_winning_bets
     puts @game["fixture"]
-    @lineup = Lineup.new(@game["fixture"]["id"])
-    @lineup.get
+    # puts @fixture[0]
     begin
-      @game_name = "#{@lineup.home_team} vs #{@lineup.away_team}"
+      @game_name = "#{@fixture["teams"]["home"]["name"]} vs #{@fixture["teams"]["away"]["name"]}"
     rescue
       @game_name = "unknown"
     end
