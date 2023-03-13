@@ -1,5 +1,9 @@
 require_relative 'football_odds'
 require_relative 'game_factory'
+unless ENV["API_FOOTBALL_RAPID_API"]
+  raise "API Key not found"
+end
+
 odds = FootballOdds.new
 begin
   odds.load_odds_from_file_if_current
