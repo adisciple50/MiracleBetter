@@ -3,6 +3,9 @@ class Game
   attr_reader :winning_grouped_bets
   attr_reader :game_name
   def initialize(game_hash,fixture)
+    @blacklist_file = File.new('blacklist.json','r')
+    @blacklist = JSON::parse(@blacklist_file.read)
+    @blacklist_file.close
     @winning_grouped_bets = []
     @fixture = fixture[0]
     @game = game_hash
@@ -21,8 +24,11 @@ class Game
     grouped_bets = []
     ids.each do |id|
       @winning_each_way_bets.each do |bet|
-        bets_reduced_to_id = {bet[:booky] => bet[:odds].select{|bet| bet["id"] == id}[0] }
-        grouped_bets << bets_reduced_to_id
+        # puts bet
+        unless @blacklist["bookys"].include?(bet[:booky])
+          bets_reduced_to_id = {bet[:booky] => bet[:odds].select{|bet| bet["id"] == id}[0] }
+          grouped_bets << bets_reduced_to_id
+        end
       end
     end
     best_odds_for_bet_id = {}
