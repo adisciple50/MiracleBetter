@@ -13,7 +13,9 @@ rescue
 end
 games_factory = GameFactory.new(odds.to_h["response"]).then{|gf| gf.create_games}
 games_factory.count.times do |i|
+  puts "\n\n"
   puts games_factory[i].game_name
+  puts "\n"
   games_factory[i].sort_bets_by_odds_by_type
   games_factory[i].winning_grouped_bets.sort().each do |val|
     val.each do |v|
