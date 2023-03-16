@@ -26,8 +26,15 @@ class Game
       @winning_each_way_bets.each do |bet|
         # puts bet
         unless @blacklist["bookys"].include?(bet[:booky])
-          bets_reduced_to_id = {bet[:booky] => bet[:odds].select{|bet| bet["id"] == id}[0] }
-          grouped_bets << bets_reduced_to_id
+          current_bet = bet[:odds].select{|bet| bet["id"] == id}
+          # puts "current bet - #{current_bet}"
+          unless current_bet.empty?
+            if current_bet[0]["id"] == id
+              # puts "current bet is - #{current_bet}"
+              bets_reduced_to_id = {"#{current_bet[0]["name"]} - #{bet[:booky]}" => current_bet[0] }
+              grouped_bets << bets_reduced_to_id
+            end
+          end
         end
       end
     end
@@ -40,7 +47,7 @@ class Game
             best_odds_for_bet_id[outcome["value"]] = {bet_group.keys[0] => outcome["odd"].to_f}
           end
           if best_odds_for_bet_id[outcome["value"]].values[0] < outcome["odd"].to_f && outcome["odd"].to_f > outcome.count
-            best_odds_for_bet_id[outcome["value"]] = {bet_group.keys[0] => outcome["odd"].to_f}
+            best_odds_for_bet_id[outcome["value"]] = {"#{bet_group.keys[0]}" => outcome["odd"].to_f}
           end
         end
       end
@@ -58,6 +65,11 @@ class Game
         bet["id"]
       end
     end
+    # apply blacklist
+    @blacklist["bets"].each do |id|
+      booky_bet_ids.delete(id)
+    end
+    # puts booky_bet_ids.flatten.uniq
     return booky_bet_ids.flatten.uniq
   end
   def get_winning_bets
