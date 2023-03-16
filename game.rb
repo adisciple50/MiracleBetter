@@ -38,16 +38,16 @@ class Game
         end
       end
     end
-    best_odds_for_bet_id = {}
+    best_odds_for_bet_id = [{}]
     grouped_bets.each do |bet_group|
       # puts "betgroup is #{bet_group}"
-      if bet_group.values[0]
+      if bet_group&.values[0]
         bet_group.values[0]["values"].each do |outcome|
-          unless best_odds_for_bet_id[outcome["value"]]
-            best_odds_for_bet_id[outcome["value"]] = {bet_group.keys[0] => outcome["odd"].to_f}
+          unless best_odds_for_bet_id[0][outcome["value"]]
+            best_odds_for_bet_id[0][outcome["value"]] = {bet_group.keys[0] => outcome["odd"].to_f}
           end
-          if best_odds_for_bet_id[outcome["value"]].values[0] < outcome["odd"].to_f && outcome["odd"].to_f > outcome.count
-            best_odds_for_bet_id[outcome["value"]] = {"#{bet_group.keys[0]}" => outcome["odd"].to_f}
+          if best_odds_for_bet_id[0][outcome["value"]].values[0] < outcome["odd"].to_f && outcome["odd"].to_f > outcome.count
+            best_odds_for_bet_id[0][outcome["value"]].update({"#{bet_group.keys[0]}" => outcome["odd"].to_f})
           end
         end
       end
@@ -55,7 +55,7 @@ class Game
     if best_odds_for_bet_id
       @winning_grouped_bets << [best_odds_for_bet_id]
     end
-    end
+  end
 
   private
   def get_unique_bet_ids
