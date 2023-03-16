@@ -6,9 +6,11 @@
     "188Bet",
     "Tipico",
     "1xBet",
-    "Betcris"
+    "Betcris",
+    "SBO"
   ],
   "bets": [
+    4,
     5,
     6
   ]
