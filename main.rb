@@ -15,5 +15,13 @@ games_factory = GameFactory.new(odds.to_h["response"]).then{|gf| gf.create_games
 games_factory.count.times do |i|
   puts games_factory[i].game_name
   games_factory[i].sort_bets_by_odds_by_type
-  puts games_factory[i].winning_grouped_bets
+  games_factory[i].winning_grouped_bets.sort().each do |val|
+    val.each do |v|
+      v.each do |sub|
+        sub.each_pair do |k,v|
+          puts "#{k} : #{v}"
+        end
+      end
+    end
+  end
 end
