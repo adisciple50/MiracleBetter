@@ -1,7 +1,7 @@
 require_relative 'football_odds'
 require_relative 'game_factory'
 unless ENV["API_FOOTBALL_RAPID_API"]
-  raise "API Key not found"
+  raise "API Key not found - please export the environmental variable - API_FOOTBALL_RAPID_API "
 end
 
 odds = FootballOdds.new
