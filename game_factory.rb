@@ -9,7 +9,7 @@ class GameFactory
   end
   def create_games
     @games = @response.map do |game|
-      puts game["fixture"]["id"]
+      # puts game["fixture"]["id"]
       Game.new(game,@fixtures.get_fixture(game["fixture"]["id"]))
     end
   end
