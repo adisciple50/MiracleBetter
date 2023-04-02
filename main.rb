@@ -21,7 +21,23 @@ games_factory.count.times do |i|
     val.each do |v|
       v.each do |sub|
         sub.each do |hash|
-          puts "#{hash[0]} : #{hash[1].sort_by {|a,b| b }.reverse}"
+          puts "==========="
+          puts "#{hash[0]}"
+          puts "==========="
+          last_bet_type = nil
+          hash[1].sort_by {|a,b| b }.each do |pair|
+            bet_type = pair[0].rpartition("-")[0]
+            if last_bet_type.nil?
+              last_bet_type = bet_type
+            end
+            if bet_type == last_bet_type
+                last_bet_type = bet_type
+              else
+                puts "------"
+                last_bet_type = bet_type
+            end
+            puts pair
+          end
         end
       end
     end
