@@ -20,8 +20,8 @@ games_factory.count.times do |i|
   games_factory[i].winning_grouped_bets.sort().each do |val|
     val.each do |v|
       v.each do |sub|
-        sub.each_pair do |k,v|
-          puts "#{k} : #{v}"
+        sub.each do |hash|
+          puts "#{hash[0]} : #{hash[1].sort_by {|a,b| b }.reverse}"
         end
       end
     end
