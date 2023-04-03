@@ -1,21 +1,22 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
-require_relative 'today'
+require_relative 'chosen_date'
 require 'json'
 class FootballOdds
-  include Today
+  include ChosenDate
   attr_reader :page
   attr_reader :all_odds
   attr_reader :current_page_data
   def initialize
     first_page
-    @url = URI("https://api-football-v1.p.rapidapi.com/v3/odds?date=#{todays_date}&page=#{@page.to_s}")
+    @url = URI("https://api-football-v1.p.rapidapi.com/v3/odds?date=#{get_date}&page=#{@page.to_s}")
     get_page
     # it starts with the first page
     @all_odds = {"odds" => []}
     @all_odds_loaded = false
     @todays_odds_filename ='todays_odds.json'
+    @tomorrows_odds_filename ='tommorows_odds.json'
   end
 
   def to_s
@@ -63,17 +64,29 @@ class FootballOdds
   end
 
   def save_all_odds
-    open(@todays_odds_filename,'w') do |f|
-      f.write JSON.generate(@all_odds)
+    if Date.today == get_date
+      open(@todays_odds_filename,'w') do |f|
+        f.write JSON.generate(@all_odds)
+      end
+    else
+      open(@tomorrows_odds_filename,'w') do |f|
+        f.write JSON.generate(@all_odds)
+      end
     end
   end
 
   def load_odds_from_file_if_current
     # checks if the file "todays_odds.json" is has been made today...
-    if File.exist?(@todays_odds_filename)
+    if File.exist?(@tomorrows_odds_filename) || File.exist?(@todays_odds_filename)
       todays_odds_file = File.open(@todays_odds_filename,'r')
-      unless todays_odds_file.ctime.to_date == todays_date
+      todays_odds_file_creation_date = todays_odds_file.ctime.to_date
+      tomorrows_odds_file = File.open(@tomorrows_odds_filename,'r')
+      tomorrows_odds_file_creation_date = tomorrows_odds_file.ctime.to_date
+      if todays_odds_file_creation_date == Date.today && get_date == Date.today.strftime("%Y-%m-%d")
         @all_odds = JSON.parse(todays_odds_file.read.to_s).to_h
+        @all_odds_loaded = true
+      elsif tomorrows_odds_file_creation_date == Date.today && get_date == Date.today.next_day(1).strftime("%Y-%m-%d")
+        @all_odds = JSON.parse(tomorrows_odds_file.read.to_s).to_h
         @all_odds_loaded = true
       else
         # ... complains if it has not.

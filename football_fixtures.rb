@@ -3,12 +3,12 @@ require 'net/http'
 require 'openssl'
 require 'date'
 require 'json'
-require_relative 'today'
+require_relative 'chosen_date'
 
 class FootballFixtures
-  include Today
+  include ChosenDate
   def initialize()
-    url = URI("https://api-football-v1.p.rapidapi.com/v3/fixtures?date=#{todays_date}")
+    url = URI("https://api-football-v1.p.rapidapi.com/v3/fixtures?date=#{get_date}")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
