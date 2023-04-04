@@ -55,11 +55,11 @@ class FootballOdds
       next_page
       get_page
       minutes, remainder_secs, tp = get_remaining_time
-      puts "Downloading Page #{@page} of #{tp} - roughly #{minutes} minutes and #{remainder_secs} seconds remain"
       sleep 1
       puts "Downloading Page #{@page} of #{tp} - roughly #{minutes} minutes and #{remainder_secs - 1} seconds remain"
       @all_odds["odds"] << to_h["response"]
       sleep 1
+      puts "Downloading Page #{@page} of #{tp} - roughly #{minutes} minutes and #{remainder_secs} seconds remain"
     end
   end
 
