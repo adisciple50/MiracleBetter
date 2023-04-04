@@ -9,7 +9,6 @@ module ChosenDate
         date_to_return = Date.today.next_day(1)
       end
     end.parse!
-    puts date_to_return.strftime("%Y-%m-%d")
     date_to_return.strftime("%Y-%m-%d")
   end
   DATE_TO_USE = self.parse_date

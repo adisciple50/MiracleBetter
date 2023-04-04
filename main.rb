@@ -5,8 +5,6 @@ unless ENV["API_FOOTBALL_RAPID_API"]
   raise "API Key not found - please export the environmental variable - API_FOOTBALL_RAPID_API "
 end
 
-
-
 odds = FootballOdds.new
 begin
   odds.load_odds_from_file_if_current

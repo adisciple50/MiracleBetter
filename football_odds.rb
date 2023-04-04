@@ -82,9 +82,6 @@ class FootballOdds
       todays_odds_file_creation_date = todays_odds_file.ctime.to_date
       tomorrows_odds_file = File.open(@tomorrows_odds_filename,'r')
       tomorrows_odds_file_creation_date = tomorrows_odds_file.ctime.to_date
-      puts get_date
-      puts Date.today.strftime("%Y-%m-%d")
-      puts get_date == Date.today.strftime("%Y-%m-%d")
 
       if tomorrows_odds_file_creation_date == Date.today && DATE_TO_USE == Date.today.next_day(1).strftime("%Y-%m-%d")
         @all_odds = JSON.parse(tomorrows_odds_file.read.to_s).to_h
