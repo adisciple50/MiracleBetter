@@ -16,7 +16,7 @@ class FootballOdds
     @all_odds = {"odds" => []}
     @all_odds_loaded = false
     @todays_odds_filename ='todays_odds.json'
-    @tomorrows_odds_filename ='tommorows_odds.json'
+    @tomorrows_odds_filename ='tomorrows_odds.json'
   end
 
   def to_s
@@ -64,7 +64,7 @@ class FootballOdds
   end
 
   def save_all_odds
-    if Date.today == get_date
+    if Date.today.strftime("%Y-%m-%d") == DATE_TO_USE
       open(@todays_odds_filename,'w') do |f|
         f.write JSON.generate(@all_odds)
       end
@@ -82,11 +82,15 @@ class FootballOdds
       todays_odds_file_creation_date = todays_odds_file.ctime.to_date
       tomorrows_odds_file = File.open(@tomorrows_odds_filename,'r')
       tomorrows_odds_file_creation_date = tomorrows_odds_file.ctime.to_date
-      if todays_odds_file_creation_date == Date.today && get_date == Date.today.strftime("%Y-%m-%d")
-        @all_odds = JSON.parse(todays_odds_file.read.to_s).to_h
-        @all_odds_loaded = true
-      elsif tomorrows_odds_file_creation_date == Date.today && get_date == Date.today.next_day(1).strftime("%Y-%m-%d")
+      puts get_date
+      puts Date.today.strftime("%Y-%m-%d")
+      puts get_date == Date.today.strftime("%Y-%m-%d")
+
+      if tomorrows_odds_file_creation_date == Date.today && DATE_TO_USE == Date.today.next_day(1).strftime("%Y-%m-%d")
         @all_odds = JSON.parse(tomorrows_odds_file.read.to_s).to_h
+        @all_odds_loaded = true
+      elsif todays_odds_file_creation_date == Date.today && DATE_TO_USE == Date.today.strftime("%Y-%m-%d")
+        @all_odds = JSON.parse(todays_odds_file.read.to_s).to_h
         @all_odds_loaded = true
       else
         # ... complains if it has not.
