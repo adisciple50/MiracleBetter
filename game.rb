@@ -14,7 +14,7 @@ class Game
     # puts @game["fixture"]
     # puts @fixture[0]
     begin
-      @game_name = "HOME:#{@fixture["teams"]["home"]["name"]} vs AWAY:#{@fixture["teams"]["away"]["name"]} - #{@fixture["fixture"]["status"]["long"]}"
+      @game_name = "Home => #{@fixture["teams"]["home"]["name"]} vs #{@fixture["teams"]["away"]["name"]} <= Away - #{@fixture["fixture"]["status"]["long"]}"
     rescue
       @game_name = "unknown"
     end
